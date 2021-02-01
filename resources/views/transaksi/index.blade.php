@@ -28,27 +28,27 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>KAS-44-9922-123</td>
-                    <td>PT Akatsuki</td>
-                    <td>Jubah</td>
-                    <td>50</td>
-                    <td>12-12-2012</td>
+                    <td>NVI-22-2021-124</td>
+                    <td>PT Ajayani</td>
+                    <td>Anjay</td>
+                    <td>80</td>
+                    <td>12-12-1212
                    
                 </tr>
                 <tr>
-                    <td>PAS-124-334-09</td>
-                    <td>PT Kharisma</td>
-                    <td>Hadroh</td>
+                    <td>PIM-441-413-89</td>
+                    <td>PT Pwt</td>
+                    <td>VGA</td>
                     <td>10</td>
-                    <td>06-06-2013</td>
+                    <td>12-12-1212
                     
                 </tr>
                 <tr>
-                    <td>POS-555-666-21</td>
-                    <td>PT LOHKOK</td>
-                    <td>Masker</td>
-                    <td>1000</td>
-                    <td>13-04-2014</td>
+                    <td>MIR-324-226-11</td>
+                    <td>PT Sumir</td>
+                    <td>Baju</td>
+                    <td>20</td>
+                    <td>12-12-1212
                    
                 </tr>
             </tbody>

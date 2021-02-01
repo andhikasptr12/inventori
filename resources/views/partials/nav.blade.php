@@ -17,7 +17,7 @@
                  <a href="{{route('transaksi')}}" class="nav-link">Data Tranksaksi</a>
                 </li>
                 <li class="nav-item">
-                <a href="" class="nav-link">Data Supplier</a>
+                <a href="{{route('suplier.index')}}" class="nav-link">Data Supplier</a>
                 </li>
             </ul>
         <!-- Right Side Of Navbar -->
