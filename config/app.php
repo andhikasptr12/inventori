@@ -135,7 +135,9 @@ return [
     */
 
     'providers' => [
-
+        // ...
+        Alfa6661\AutoNumber\AutoNumberServiceProvider::class,
+    
         /*
          * Laravel Framework Service Providers...
          */

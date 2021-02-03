@@ -17,7 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->unsignedinteger('suplier_id');
             $table->unsignedinteger('barang_id');
-            $table->string('tanggal_keluar');
+            $table->string('kode_transaksi');
             $table->integer('quantity');
             $table->timestamps();
         });

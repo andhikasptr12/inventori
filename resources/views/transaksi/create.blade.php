@@ -6,31 +6,30 @@
          <div class="col-md-6">
                 <div class="card"> 
                       <div class="card-body">
-                        <from action="" method="post">
+                        <form action="{{route('transaksi.store')}} method="post">
+                        @csrf
                            <div class="from-group">
-                               <label for="kode_barang">Kode Barang</label>
-                               <input type="text" name="kode_barang" id="kode_barang" class="form-control">
+                               <label for="">Nama Barang</label>
+                               <select name="barang_id" id="">
+                                   <option value="">pilih Barang</option>
+                                   @foreach($barangs as $barang)
+                                   <option value="{{$barang->id}}">{{$barang->nama_barang}}</option>
+                                   @endforeach
+                                </select>
                              </div>
-                             <div class="from-group">
-                               <label for="nama_barang">Nama Barang</label>
-                               <input type="text" name="nama_barang" id="nama_barang" class="form-control">
+                             <div class="form-group">
+                               <label for="">Nama Suplier</label>
+                               <select name="suplier_id" id=""> 
+                                    <option value="">pilih Suplier</option>
+                                    @foreach($supliers as $suplier)
+                                        <option value="{{$suplier->id}}">{{$suplier->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="from-group">
-                               <label for="nama_barang">Nama Supplier</label>
-                              <select name="" id="" class="form-control">
-
-                               <option value="">Pilih suplier</option>
-
-                               </select>
-                            </div>
-                          <div class="form-group">
-                             <label for="quantity">Quantity</label>
-                             <input type="number" name="quantity" id="quantity" class="form-control">
-                          </div>
-                          <div>
-                              <button class="btn btn-outline-info btn-block">Simpan</button>
-                         </div>
-                     </form>
+                            <div class="form-group">
+                               <label for="form-group">
+                               <input type="number" name="quantity">Quantity</label>
+                          </div>                   
                  </div>
               <div>
          </div>
