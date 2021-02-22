@@ -9,18 +9,22 @@ use App\Http\Controllers\Controller;
 
 class MasterBarangController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('auth');
+    }
     public function index()
     {
         $barangs = Barang::all();
 
-        return view('masterbarang.index',compact('barangs'));
+        return view('Profile.index',compact('barangs'));
         
     }
     public function create()
     {
         $supliers = Suplier::all();
 
-        return view('masterbarang.create', compact('supliers'));
+        return view('profile.create', compact('supliers'));
     }
     public function store(Request $request)
     {
@@ -60,7 +64,7 @@ class MasterBarangController extends Controller
     {
         $barang = Barang::findOrFail($id);
 
-        return view('masterbarang.detail', compact('barang'));
+        return view('Profile.detail', compact('barang'));
     }
 
     public function destroy($id)
@@ -69,7 +73,7 @@ class MasterBarangController extends Controller
         $barang->delete();
 
         flash()->success('Data berhasil dihapus');
-        return redirect(route('master-barang'));
+        return redirect(route('profile'));
     }
     
 }

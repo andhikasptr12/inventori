@@ -31,17 +31,33 @@ Route::group(['prefix'=>'master-barang'],function(){
     
  });
 
- Route::group(['prefix' => 'transaksi'], function(){
-     Route::get('/index','Transaksi\TransaksiController@index')->name('transaksi');
-     Route::get('/create','Transaksi\BarangKeluarController@create')->name('transaksi.barang-keluar');   
+ Route::group(['prefix'=>'suplier'],function(){
+    Route::get('/index','Suplier\SuplierController@index')->name('suplier');
+    Route::get('/formulir-barang','Suplier\SuplierController@create')->name('suplier.create');
+    Route::get('/edit/{barang}','Suplier\SuplierController@edit')->name('suplier.edit');
+    Route::post('/index','Suplier\SuplierController@store')->name('suplier.store');
+    Route::get('/show/{barang}','Suplier\SuplierController@show')->name('suplier.show');
+    Route::patch('/update/{barang}','Suplier\SuplierController@update')->name('suplier.update');
+    Route::delete('/delete/{barang}','Suplier\SuplierController@destroy')->name('suplier.delete');
+    
  });
 
- Route::group(['prefix'=> 'suplier'], function(){
-    Route::get('index','Suplier\SuplierController@index')->name('suplier.index');
-    Route::get('create','Suplier\SuplierController@create')->name('suplier.create');
-    Route::post('store','Suplier\SuplierController@store')->name('suplier.store');
-    Route::get('edit/{suplier}','Suplier\SuplierController@edit')->name('suplier.edit');
-    Route::patch('update/{suplier}','Suplier\SuplierController@update')->name('suplier.update');
-    Route::delete('delete/{suplier}','Suplier\SuplierController@destroy')->name('suplier.delete');
+ Route::group(['prefix'=>'transaksi'],function(){
+    Route::get('/index','Transaksi\TransaksiController@index')->name('transaksi');
+    Route::get('/formulir-barang','Transaksi\BarangKeluarController@create')->name('transaksi.create');
+    Route::post('/index','Transaksi\BarangKeluarController@store')->name('transaksi.store');
+    ;
+    
+ });
+
+ Route::group(['prefix'=> 'profile'], function(){
+    Route::get('index','Profile\ProfileController@index')->name('profile.index');
+    Route::get('create','Profile\ProfileController@create')->name('profile.create');
+    Route::post('store','Profile\ProfileController@store')->name('profile.store');
+    Route::get('edit/{profile}','Profile\ProfileController@edit')->name('profile.edit');
+    Route::get('show/{profile}','Profile\ProfileController@show')->name('profile.detail');
+    Route::patch('update/{profile}','Profile\ProfileController@update')->name('profile.update');
+    Route::delete('delete/{profile}','Profile\ProfileController@destroy')->name('profile.delete');
 });
+
 

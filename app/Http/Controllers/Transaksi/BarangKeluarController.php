@@ -1,30 +1,43 @@
 <?php
 
-namespace App\Http\Controllers\BarangKeluarController;
+namespace App\Http\Controllers\Transaksi;
 
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Barang;
 use App\Suplier;
 use App\Transaction;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class BarangKeluarController extends Controller
 {
-    public function store(Request $request)
-
+    public function create()
     {
-    
-    $transaksi=Transaction::create([
+        $data = [
+            'barangs' =>Barang::all(),
+            'supliers' =>Suplier::all(),
+        ];
 
-     'suplier_id'=>$request->suplier_id,
-     'barang_id'=>$request->barang_id,
-     'quantity'=>$request->quantity, 
-            
-    ]);
+        return view('transaksi.create',$data);
+    }
 
-     flash()->success('Transaksi keluar berhasil di buat');
-         
-         return redirect()->back();
+    public function store(Request $request)
+    {
+        $transaksi = Transaction::create([
+            'suplier_id' => $request->suplier_id,
+            'barang_id' => $request->barang_id,
+            'quantity' => $request->quantity,
+        ]);
 
+        if ($transaksi->save()){
+            $barang = Barang::findOrFail($transaksi->barang_id);
+            $hitung = $barang->quantity - $transaksi->quantity;
+                $barang->update([
+                'quantity' => $hitung,
+            ]);
+        };
+        
+        flash()->success('Transaksi keluar berhasil di buat');
+
+        return redirect()->back();
     }
 }

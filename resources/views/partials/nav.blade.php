@@ -9,17 +9,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a href="{{route('master-barang')}}" class="nav-link">Master Barang</a>
-                    </li> 
-                <li class="nav-item">
-                 <a href="{{route('transaksi')}}" class="nav-link">Data Tranksaksi</a>
-                </li>
-                <li class="nav-item">
-                <a href="{{route('suplier.index')}}" class="nav-link">Data Supplier</a>
-                </li>
             </ul>
+             
+               
+           
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
@@ -33,6 +26,24 @@
                         </li>
                     @endif
                 @else
+                <ul class="navbar-nav mr-auto"> 
+                <li class="nav-item">
+                 <a href="{{route('profile.index')}}" class="nav-link">Profile</a>
+                </li>
+                
+                <li class="nav-item">
+                 <a href="{{route('master-barang')}}" class="nav-link">Master Barang</a>
+                </li>
+            
+            
+                <li class="nav-item">
+                 <a href="{{route('suplier')}}" class="nav-link">Data Suplier</a>
+                </li>
+             
+                <li class="nav-item">
+                 <a href="{{route('transaksi')}}" class="nav-link">Data Transaksi</a>
+                </li>
+            
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
