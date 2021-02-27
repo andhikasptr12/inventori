@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Laporan;
+namespace App\Http\Controllers\Barang;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,4 +20,3 @@ class BarangController extends Controller
         return $pdf->stream('laporan_barang.pdf');
     }
 }
-

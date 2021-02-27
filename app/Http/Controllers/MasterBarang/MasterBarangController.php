@@ -17,14 +17,14 @@ class MasterBarangController extends Controller
     {
         $barangs = Barang::all();
 
-        return view('Profile.index',compact('barangs'));
+        return view('masterbarang.index',compact('barangs'));
         
     }
     public function create()
     {
         $supliers = Suplier::all();
 
-        return view('profile.create', compact('supliers'));
+        return view('masterbarang.create', compact('supliers'));
     }
     public function store(Request $request)
     {
@@ -64,7 +64,7 @@ class MasterBarangController extends Controller
     {
         $barang = Barang::findOrFail($id);
 
-        return view('Profile.detail', compact('barang'));
+        return view('masterbarang.detail', compact('barang'));
     }
 
     public function destroy($id)
@@ -72,8 +72,8 @@ class MasterBarangController extends Controller
         $barang =  Barang::findOrFail($id);
         $barang->delete();
 
-        flash()->success('Data berhasil dihapus');
-        return redirect(route('profile'));
+        flash()->success('Datas berhasil dihapus');
+        return redirect(route('master-barang'));
     }
     
 }

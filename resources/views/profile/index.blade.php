@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <a href="{{route('profile.create')}}" class="btn btn-info">Tambah Profile </a>
+                                <a href="{{route('profile.create')}}" class="btn btn-info">Tambah Profile baru </a>
                             </div>
                             <div>
                                 <form action="" method="GET">
@@ -42,8 +42,8 @@
                                     <th>Options</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach($profiles as $profile)
+                            <tbody> 
+                             @foreach ($profiles as $profile)
                                 <tr>
                                     <td>{{$profile->nama}}</td>
                                     <td>{{$profile->usia}}</td>
@@ -56,7 +56,7 @@
                                             @csrf 
                                             @method('DELETE')
                                             <a href="{{route('profile.edit', $profile->id)}}" class="btn btn-warning btn-sm">Edit</a>
-                                            <a href="{{route('profile.detail', $profile->id)}}" class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{route('profile.show', $profile->id)}}" class="btn btn-primary btn-sm">Detail</a>
                                             <button class="btn btn-danger btn-sm">Delete</button>
                                         </form>
                                     </td>

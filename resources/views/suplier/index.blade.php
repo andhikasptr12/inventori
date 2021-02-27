@@ -10,25 +10,23 @@
                             <div>
                                 <a href="{{route('suplier.create')}}" class="btn btn-info">Tambah Suplier baru</a>
                             </div>
-                            <div>
-                                <form action="">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <input type="date" name="" class="form-control" id="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <input type="date" name="" class="form-control" id="">
-                                            </div>
-                                        </div>
-                                        <div>
-                                        	<button class="btn btn-info"> Cari data </button>
-                                        </div>
+                            <form action="{{route('laporan.periode.suplier')}}" method="GET">
+                                <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                            <input type="date" name="tgl_awal" class="form-control" id="tgl_awal">
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="date" name="tgl_akhir" class="form-control" id="tgl_akhir">
+                                    </div>
+                                </div>
+                                <div>
+                                <button class="btn btn-info"> Cari data </button>
+                                </div>
+                                </div>                 
+                            </form>
                         </div>
                         <table class="table table-striped">
                             <thead>

@@ -12,7 +12,7 @@ class ProfileController extends Controller
     {
         $profiles = Profile::all();
 
-        return view('profile.index',compact('profiles'));
+        return view('profile.index', compact('profiles') );
     }
 
     public function create()
@@ -60,8 +60,9 @@ class ProfileController extends Controller
 
         flash()->success('Profile berhasil di ubah');
 
-        return redirect()->back();
+        return redirect(route('profile.index'));
     }
+    
 
     public function destroy($id)
     {

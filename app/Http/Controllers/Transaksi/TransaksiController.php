@@ -21,4 +21,3 @@ class TransaksiController extends Controller
         return view('transaksi.index', compact('transactions'));
     }
 }
-

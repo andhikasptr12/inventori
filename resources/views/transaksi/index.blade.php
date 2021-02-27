@@ -14,6 +14,7 @@
                 
                         <a href="{{route('transaksi.barang-masuk')}}" class="btn btn-info mr-2">Tambah Barang Masuk</a>
                         <a href="{{route('transaksi.barang-keluar')}}" class="btn btn-danger mr-2">Tambah Transaksi Keluar</a>
+                        
                     </div>
                 </div>
                  <table class="table table-striped">
